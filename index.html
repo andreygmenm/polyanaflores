@@ -3,31 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dra. Polyana Flores — Obstetra Humanizada</title>
-  <meta name="description" content="Pré-natal humanizado, acompanhamento completo da gestação e atendimento obstétrico com cuidado, atenção e segurança para mãe e bebê." />
+  <title>Dra. Polyana Flores — Ginecologista e Obstetra em Florianópolis</title>
+  <meta name="description" content="Ginecologista e Obstetra em Florianópolis. Atendimento humanizado para todas as fases da vida da mulher. Agende sua consulta pelo WhatsApp." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --branco: #FFFFFF;
-      --rose-suave: #F9ECEC;
-      --rose-medio: #F2D9D9;
-      --bege: #F7F0E8;
-      --bege-medio: #EDE3D6;
-      --nude: #D4B896;
+      --rose: #F8EAEA;
+      --rose-md: #EFD5D5;
+      --bege: #F7F1EA;
+      --bege-md: #EDE3D4;
       --dourado: #C4A35A;
-      --dourado-claro: #DFC07A;
-      --texto-escuro: #2C2424;
-      --texto-medio: #5C4E4E;
-      --texto-suave: #8A7575;
-      --sombra: rgba(196,163,90,0.12);
-      --sombra-card: rgba(44,36,36,0.07);
-      --radius: 20px;
-      --radius-sm: 12px;
-      --wpp: #25D366;
+      --dourado-cl: #DFC07A;
+      --escuro: #2A2020;
+      --medio: #5A4A4A;
+      --suave: #8A7272;
+      --verde: #25D366;
+      --r: 18px;
     }
 
     html { scroll-behavior: smooth; }
@@ -35,49 +31,93 @@
     body {
       font-family: 'Inter', sans-serif;
       background: var(--branco);
-      color: var(--texto-escuro);
+      color: var(--escuro);
       line-height: 1.65;
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
 
-    /* ── HERO ─────────────────────────────────────────── */
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(196,163,90,0.12);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--escuro);
+      line-height: 1.2;
+    }
+
+    .nav-logo span { display: block; font-size: 11px; font-family: 'Inter', sans-serif; font-weight: 400; color: var(--dourado); letter-spacing: 1px; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--verde);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+
+    .nav-cta:hover { opacity: .88; }
+    .nav-cta svg { width: 16px; height: 16px; }
+
+    /* HERO */
     .hero {
       min-height: 100svh;
-      background: linear-gradient(135deg, #FFF9F5 0%, var(--rose-suave) 50%, #FFF5F0 100%);
+      background: linear-gradient(140deg, #FFF8F5 0%, var(--rose) 55%, #FFF4EE 100%);
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
-      padding: 80px 24px 60px;
+      padding: 100px 24px 70px;
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(212,184,150,0.18) 0%, transparent 70%);
-      top: -100px; right: -100px;
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(196,163,90,0.14) 0%, transparent 70%);
+      top: -80px; right: -80px;
       border-radius: 50%;
+      pointer-events: none;
     }
 
     .hero::after {
       content: '';
       position: absolute;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(249,236,236,0.6) 0%, transparent 70%);
-      bottom: -80px; left: -80px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(239,213,213,0.5) 0%, transparent 70%);
+      bottom: -60px; left: -60px;
       border-radius: 50%;
+      pointer-events: none;
     }
 
-    .hero-container {
-      max-width: 1200px;
+    .hero-wrap {
+      max-width: 1160px;
       width: 100%;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 56px;
       align-items: center;
       position: relative;
       z-index: 1;
@@ -86,80 +126,88 @@
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(196,163,90,0.12);
-      border: 1px solid rgba(196,163,90,0.3);
+      gap: 7px;
+      background: rgba(196,163,90,0.1);
+      border: 1px solid rgba(196,163,90,0.28);
       color: var(--dourado);
-      padding: 6px 16px;
+      padding: 5px 14px;
       border-radius: 50px;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      margin-bottom: 24px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .6px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
     }
-
-    .hero-badge::before { content: '✦'; font-size: 10px; }
 
     .hero h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 600;
-      color: var(--texto-escuro);
-      line-height: 1.25;
-      margin-bottom: 20px;
-      letter-spacing: -0.5px;
+      font-size: clamp(2.1rem, 4vw, 3.1rem);
+      font-weight: 700;
+      color: var(--escuro);
+      line-height: 1.2;
+      margin-bottom: 14px;
+      letter-spacing: -.5px;
     }
 
-    .hero h1 em {
-      font-style: italic;
-      color: var(--dourado);
-    }
+    .hero h1 em { font-style: italic; color: var(--dourado); }
 
     .hero h2 {
       font-family: 'Inter', sans-serif;
-      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      font-size: clamp(1rem, 1.7vw, 1.15rem);
       font-weight: 400;
-      color: var(--texto-medio);
+      color: var(--medio);
       line-height: 1.7;
-      margin-bottom: 36px;
+      margin-bottom: 18px;
+      max-width: 480px;
     }
+
+    .hero-sub-crm {
+      font-size: 12.5px;
+      color: var(--suave);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-sub-crm::before { content: ''; width: 28px; height: 1px; background: var(--dourado); display: block; }
 
     .btn-wpp {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+      gap: 11px;
+      background: linear-gradient(135deg, #25D366, #1CB954);
       color: #fff;
       font-family: 'Inter', sans-serif;
-      font-size: 1rem;
+      font-size: .97rem;
       font-weight: 600;
-      padding: 16px 32px;
+      padding: 15px 30px;
       border-radius: 50px;
       text-decoration: none;
-      box-shadow: 0 8px 30px rgba(37,211,102,0.35);
-      transition: transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.2px;
+      box-shadow: 0 8px 28px rgba(37,211,102,.32);
+      transition: transform .2s, box-shadow .2s;
     }
 
-    .btn-wpp:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37,211,102,0.45); }
+    .btn-wpp:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(37,211,102,.42); }
+    .btn-wpp svg { width: 20px; height: 20px; flex-shrink: 0; }
 
-    .btn-wpp svg { width: 22px; height: 22px; flex-shrink: 0; }
-
-    .hero-subtexto {
-      margin-top: 16px;
-      font-size: 12.5px;
-      color: var(--texto-suave);
+    .hero-chips {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      align-items: center;
+      margin-top: 18px;
     }
 
-    .hero-subtexto span { display: flex; align-items: center; gap: 5px; }
-    .hero-subtexto span::before { content: '·'; }
-    .hero-subtexto span:first-child::before { display: none; }
+    .chip {
+      font-size: 11.5px;
+      color: var(--medio);
+      background: rgba(255,255,255,.7);
+      border: 1px solid var(--bege-md);
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
 
     /* Foto hero */
-    .hero-foto-wrapper {
+    .hero-foto {
       position: relative;
       display: flex;
       justify-content: center;
@@ -168,184 +216,140 @@
     .hero-foto-frame {
       position: relative;
       width: 100%;
-      max-width: 480px;
+      max-width: 460px;
     }
 
     .hero-foto-frame::before {
       content: '';
       position: absolute;
-      inset: -16px -16px 0 16px;
-      background: linear-gradient(135deg, var(--rose-medio), var(--bege-medio));
-      border-radius: 40px 40px 120px 40px;
-      z-index: 0;
+      inset: -14px -14px 0 14px;
+      background: linear-gradient(140deg, var(--rose-md), var(--bege-md));
+      border-radius: 36px 36px 110px 36px;
     }
 
     .hero-foto-frame img {
       width: 100%;
-      height: 540px;
+      height: 520px;
       object-fit: cover;
       object-position: center top;
-      border-radius: 36px 36px 100px 36px;
+      border-radius: 32px 32px 90px 32px;
       position: relative;
       z-index: 1;
-      box-shadow: 0 20px 60px rgba(44,36,36,0.15);
+      box-shadow: 0 20px 56px rgba(42,32,32,.14);
       display: block;
     }
 
+    .hero-foto-frame img[src=""], .hero-foto-frame img:not([src]) { display: none; }
+
     .hero-foto-placeholder {
       width: 100%;
-      height: 540px;
-      border-radius: 36px 36px 100px 36px;
-      position: relative;
-      z-index: 1;
-      background: linear-gradient(160deg, var(--rose-medio) 0%, var(--bege-medio) 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--texto-suave);
-      font-size: 14px;
-      text-align: center;
-      gap: 12px;
-      box-shadow: 0 20px 60px rgba(44,36,36,0.15);
+      height: 520px;
+      border-radius: 32px 32px 90px 32px;
+      background: linear-gradient(160deg, var(--rose-md), var(--bege-md));
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: var(--suave); font-size: 13px;
+      position: relative; z-index: 1;
+      box-shadow: 0 20px 56px rgba(42,32,32,.14);
     }
 
-    .hero-foto-placeholder .initials {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: rgba(196,163,90,0.2);
-      border: 2px solid rgba(196,163,90,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--dourado);
+    .hero-foto-placeholder .ini {
+      width: 90px; height: 90px; border-radius: 50%;
+      background: rgba(196,163,90,.18); border: 2px solid rgba(196,163,90,.35);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--dourado);
     }
 
-    .hero-card-flutuante {
+    .float-card {
       position: absolute;
-      bottom: 40px;
-      left: -20px;
       background: #fff;
-      border-radius: var(--radius-sm);
-      padding: 12px 18px;
-      box-shadow: 0 8px 30px rgba(44,36,36,0.12);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      border-radius: 14px;
+      padding: 11px 16px;
+      box-shadow: 0 6px 24px rgba(42,32,32,.1);
       z-index: 2;
     }
 
-    .hero-card-flutuante .stars { color: #F4C430; font-size: 13px; letter-spacing: 1px; }
-    .hero-card-flutuante .texto { font-size: 12px; color: var(--texto-medio); }
-    .hero-card-flutuante .texto strong { display: block; font-size: 13.5px; color: var(--texto-escuro); }
+    .float-card.left { bottom: 48px; left: -18px; display: flex; align-items: center; gap: 10px; }
+    .float-card.right { top: 32px; right: -18px; text-align: center; }
+    .float-card .stars { color: #F4A435; font-size: 12px; letter-spacing: 1px; }
+    .float-card .ft { font-size: 11.5px; color: var(--medio); }
+    .float-card .ft strong { display: block; font-size: 13px; color: var(--escuro); }
+    .float-card .num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--dourado); line-height: 1; }
+    .float-card .lbl { font-size: 10px; color: var(--suave); margin-top: 2px; }
 
-    .hero-card-flutuante2 {
-      position: absolute;
-      top: 30px;
-      right: -20px;
-      background: var(--dourado);
-      border-radius: var(--radius-sm);
-      padding: 10px 16px;
-      box-shadow: 0 8px 30px rgba(196,163,90,0.35);
-      z-index: 2;
-      text-align: center;
-    }
-
-    .hero-card-flutuante2 .numero {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-    }
-
-    .hero-card-flutuante2 .label {
-      font-size: 10px;
-      color: rgba(255,255,255,0.85);
-      margin-top: 3px;
-    }
-
-    /* ── SECTIONS COMUNS ─────────────────────────────── */
+    /* SEÇÕES */
     section { padding: 80px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .label { font-size: 11.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--dourado); margin-bottom: 12px; }
+    .titulo { font-size: clamp(1.6rem, 2.8vw, 2.3rem); font-weight: 600; color: var(--escuro); line-height: 1.3; margin-bottom: 14px; }
+    .sub { font-size: 1.02rem; color: var(--medio); max-width: 600px; line-height: 1.7; }
+    .tc { text-align: center; }
+    .tc .sub { margin: 0 auto; }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    /* CONDIÇÕES */
+    .condicoes { background: var(--bege); }
 
-    .section-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--dourado);
-      margin-bottom: 14px;
-    }
-
-    .section-title {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 600;
-      color: var(--texto-escuro);
-      line-height: 1.3;
-      margin-bottom: 16px;
-    }
-
-    .section-sub {
-      font-size: 1.05rem;
-      color: var(--texto-medio);
-      max-width: 600px;
-      line-height: 1.7;
-    }
-
-    .text-center { text-align: center; }
-    .text-center .section-sub { margin: 0 auto; }
-
-    /* ── IDENTIFICAÇÃO ───────────────────────────────── */
-    .identificacao {
-      background: var(--bege);
-    }
-
-    .cards-grid {
+    .cond-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 16px;
       margin-top: 48px;
     }
 
-    .card-id {
+    .cond-card {
       background: #fff;
-      border-radius: var(--radius-sm);
-      padding: 24px 20px;
+      border-radius: var(--r);
+      padding: 26px 22px;
+      border: 1px solid var(--bege-md);
+      box-shadow: 0 2px 10px rgba(42,32,32,.05);
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       gap: 10px;
-      border: 1px solid var(--bege-medio);
-      box-shadow: 0 2px 12px var(--sombra-card);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform .2s, box-shadow .2s;
       cursor: default;
     }
 
-    .card-id:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(196,163,90,0.15);
-    }
+    .cond-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(196,163,90,.15); }
 
-    .card-id .emoji { font-size: 1.8rem; }
+    .cond-icon { font-size: 1.9rem; }
 
-    .card-id .card-title {
+    .cond-titulo {
       font-family: 'Playfair Display', serif;
-      font-size: 1rem;
+      font-size: .97rem;
       font-weight: 600;
-      color: var(--texto-escuro);
+      color: var(--escuro);
       line-height: 1.3;
     }
 
-    /* ── CONEXÃO EMOCIONAL ───────────────────────────── */
+    .cond-desc {
+      font-size: .83rem;
+      color: var(--suave);
+      line-height: 1.55;
+    }
+
+    .cond-cta {
+      margin-top: 40px;
+      background: var(--rose);
+      border-radius: var(--r);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cond-cta p {
+      font-size: 1rem;
+      color: var(--medio);
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .cond-cta p strong { color: var(--escuro); font-family: 'Playfair Display', serif; }
+
+    /* CONEXÃO */
     .conexao {
-      background: linear-gradient(135deg, var(--texto-escuro) 0%, #3D2F2F 100%);
+      background: linear-gradient(140deg, var(--escuro) 0%, #3A2A2A 100%);
       position: relative;
       overflow: hidden;
     }
@@ -353,52 +357,50 @@
     .conexao::before {
       content: '';
       position: absolute;
-      width: 500px; height: 500px;
+      width: 480px; height: 480px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(196,163,90,0.12) 0%, transparent 70%);
-      top: -150px; right: -100px;
+      background: radial-gradient(circle, rgba(196,163,90,.1) 0%, transparent 70%);
+      top: -120px; right: -80px;
+      pointer-events: none;
     }
 
-    .conexao .section-label { color: var(--dourado-claro); }
-    .conexao .section-title { color: #fff; max-width: 700px; }
+    .conexao .label { color: var(--dourado-cl); }
+    .conexao .titulo { color: #fff; max-width: 680px; }
 
     .conexao-texto {
+      font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
-      color: rgba(255,255,255,0.75);
-      max-width: 680px;
+      font-style: italic;
+      color: rgba(255,255,255,.72);
+      max-width: 660px;
       line-height: 1.8;
       margin: 24px 0 40px;
-      font-style: italic;
-      font-family: 'Playfair Display', serif;
     }
 
-    .btn-secundario {
+    .btn-outline {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       background: transparent;
-      border: 1.5px solid rgba(196,163,90,0.5);
-      color: var(--dourado-claro);
+      border: 1.5px solid rgba(196,163,90,.45);
+      color: var(--dourado-cl);
       font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
+      font-size: .92rem;
       font-weight: 500;
-      padding: 14px 28px;
+      padding: 13px 26px;
       border-radius: 50px;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: all .2s;
     }
 
-    .btn-secundario:hover {
-      background: rgba(196,163,90,0.15);
-      border-color: var(--dourado);
-    }
+    .btn-outline:hover { background: rgba(196,163,90,.12); border-color: var(--dourado); }
 
-    /* ── COMO FUNCIONA ───────────────────────────────── */
-    .como-funciona { background: var(--branco); }
+    /* COMO FUNCIONA */
+    .como { background: var(--branco); }
 
     .passos {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 0;
       margin-top: 56px;
       position: relative;
@@ -407,11 +409,11 @@
     .passos::before {
       content: '';
       position: absolute;
-      top: 36px;
-      left: calc(16.66% + 20px);
-      right: calc(16.66% + 20px);
+      top: 35px;
+      left: calc(12.5% + 20px);
+      right: calc(12.5% + 20px);
       height: 2px;
-      background: linear-gradient(90deg, var(--rose-medio), var(--dourado-claro), var(--rose-medio));
+      background: linear-gradient(90deg, var(--rose-md), var(--dourado-cl), var(--rose-md));
     }
 
     .passo {
@@ -419,357 +421,242 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 0 24px;
+      padding: 0 16px;
       position: relative;
     }
 
-    .passo-numero {
-      width: 72px; height: 72px;
+    .passo-num {
+      width: 70px; height: 70px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--rose-suave), var(--bege));
-      border: 2px solid var(--dourado-claro);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #fff;
+      border: 2px solid var(--dourado-cl);
+      display: flex; align-items: center; justify-content: center;
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: var(--dourado);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       position: relative;
       z-index: 1;
-      background-color: #fff;
+      box-shadow: 0 0 0 6px rgba(196,163,90,.06);
     }
 
-    .passo h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--texto-escuro);
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
+    .passo h3 { font-size: 1rem; font-weight: 600; color: var(--escuro); margin-bottom: 8px; line-height: 1.3; }
+    .passo p { font-size: .84rem; color: var(--suave); line-height: 1.6; }
 
-    .passo p {
-      font-size: 0.9rem;
-      color: var(--texto-suave);
-      line-height: 1.6;
-    }
+    /* DIFERENCIAIS */
+    .diferenciais { background: var(--rose); }
 
-    /* ── DIFERENCIAIS ─────────────────────────────────── */
-    .diferenciais { background: var(--rose-suave); }
-
-    .diferenciais-grid {
+    .dif-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 18px;
       margin-top: 48px;
     }
 
-    .diferencial-card {
+    .dif-card {
       background: #fff;
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      box-shadow: 0 2px 16px var(--sombra-card);
-      border: 1px solid rgba(255,255,255,0.8);
-      transition: transform 0.2s;
+      border-radius: var(--r);
+      padding: 26px 22px;
+      display: flex; flex-direction: column; gap: 12px;
+      box-shadow: 0 2px 12px rgba(42,32,32,.06);
+      transition: transform .2s;
     }
 
-    .diferencial-card:hover { transform: translateY(-3px); }
+    .dif-card:hover { transform: translateY(-3px); }
 
-    .diferencial-icon {
-      width: 50px; height: 50px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--rose-suave), var(--bege));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
+    .dif-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--rose), var(--bege));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
     }
 
-    .diferencial-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--texto-escuro);
-    }
+    .dif-card h3 { font-size: 1rem; font-weight: 600; color: var(--escuro); }
+    .dif-card p { font-size: .85rem; color: var(--suave); line-height: 1.6; }
 
-    .diferencial-card p {
-      font-size: 0.88rem;
-      color: var(--texto-suave);
-      line-height: 1.6;
-    }
-
-    /* ── PROVA SOCIAL ─────────────────────────────────── */
-    .prova-social { background: var(--branco); }
+    /* DEPOIMENTOS */
+    .depoimentos { background: var(--branco); }
 
     .numeros {
       display: flex;
       justify-content: center;
-      gap: 60px;
-      margin: 48px 0;
+      gap: 64px;
+      margin: 48px 0 60px;
       flex-wrap: wrap;
     }
 
-    .numero-item { text-align: center; }
+    .num-item { text-align: center; }
+    .num-item .n { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: var(--dourado); line-height: 1; }
+    .num-item .nl { font-size: .82rem; color: var(--suave); margin-top: 5px; }
 
-    .numero-item .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--dourado);
-      line-height: 1;
-    }
-
-    .numero-item .num-label {
-      font-size: 0.85rem;
-      color: var(--texto-suave);
-      margin-top: 6px;
-    }
-
-    .depoimentos-grid {
+    .dep-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 56px;
+      gap: 22px;
     }
 
-    .depoimento {
+    .dep-card {
       background: var(--bege);
-      border-radius: var(--radius);
-      padding: 32px 28px;
+      border-radius: var(--r);
+      padding: 30px 26px;
+      border: 1px solid var(--bege-md);
       position: relative;
-      border: 1px solid var(--bege-medio);
     }
 
-    .depoimento::before {
+    .dep-card::before {
       content: '\201C';
       position: absolute;
-      top: 20px;
-      left: 24px;
+      top: 16px; left: 22px;
       font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      color: var(--dourado-claro);
+      font-size: 3.5rem;
+      color: var(--dourado-cl);
       line-height: 1;
-      opacity: 0.4;
+      opacity: .35;
     }
 
-    .depoimento .stars {
-      color: #F4A435;
-      font-size: 14px;
-      letter-spacing: 2px;
-      margin-bottom: 16px;
+    .dep-stars { color: #F4A435; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+    .dep-texto { font-size: .93rem; color: var(--medio); line-height: 1.7; font-style: italic; margin-bottom: 18px; }
+    .dep-autora { display: flex; align-items: center; gap: 10px; }
+
+    .dep-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose-md), var(--bege-md));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0;
     }
 
-    .depoimento .texto {
-      font-size: 0.95rem;
-      color: var(--texto-medio);
-      line-height: 1.7;
-      font-style: italic;
-      margin-bottom: 20px;
-    }
-
-    .depoimento .autora {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .depoimento .avatar {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--rose-medio), var(--bege-medio));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
-
-    .depoimento .nome {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--texto-escuro);
-    }
-
-    .depoimento .desc {
-      font-size: 0.78rem;
-      color: var(--texto-suave);
-    }
+    .dep-nome { font-size: .86rem; font-weight: 600; color: var(--escuro); }
+    .dep-desc { font-size: .76rem; color: var(--suave); }
 
     .google-badge {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--branco);
-      border: 1px solid var(--bege-medio);
+      background: #fff;
+      border: 1px solid var(--bege-md);
       border-radius: 50px;
-      padding: 10px 20px;
-      margin-top: 40px;
-      box-shadow: 0 2px 10px var(--sombra-card);
+      padding: 9px 20px;
+      margin-top: 36px;
+      box-shadow: 0 2px 8px rgba(42,32,32,.05);
     }
 
-    .google-badge .g-stars { color: #F4A435; font-size: 15px; }
-    .google-badge .g-text { font-size: 13px; color: var(--texto-medio); }
-    .google-badge .g-text strong { color: var(--texto-escuro); }
+    .google-badge .gs { color: #F4A435; font-size: 14px; }
+    .google-badge .gt { font-size: 12.5px; color: var(--medio); }
+    .google-badge .gt strong { color: var(--escuro); }
 
-    /* ── AUTORIDADE ───────────────────────────────────── */
-    .autoridade {
-      background: linear-gradient(135deg, var(--bege) 0%, var(--rose-suave) 100%);
-    }
+    /* SOBRE */
+    .sobre { background: linear-gradient(140deg, var(--bege), var(--rose)); }
 
-    .autoridade-inner {
+    .sobre-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: center;
     }
 
-    .autoridade-foto {
-      position: relative;
-    }
-
-    .autoridade-foto img,
-    .autoridade-foto-placeholder {
+    .sobre-foto img {
       width: 100%;
-      height: 460px;
+      height: 440px;
       object-fit: cover;
       object-position: center top;
-      border-radius: var(--radius) var(--radius) 80px var(--radius);
-      box-shadow: 0 16px 50px rgba(44,36,36,0.12);
+      border-radius: var(--r) var(--r) 70px var(--r);
+      box-shadow: 0 16px 48px rgba(42,32,32,.12);
     }
 
-    .autoridade-foto-placeholder {
-      background: linear-gradient(160deg, var(--rose-medio) 0%, var(--bege-medio) 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: var(--texto-suave);
-      font-size: 13px;
+    .sobre-foto-ph {
+      width: 100%;
+      height: 440px;
+      border-radius: var(--r) var(--r) 70px var(--r);
+      background: linear-gradient(160deg, var(--rose-md), var(--bege-md));
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 10px; color: var(--suave); font-size: 13px;
+      box-shadow: 0 16px 48px rgba(42,32,32,.12);
     }
 
-    .crm-badge {
-      position: absolute;
-      bottom: -16px;
-      right: 20px;
+    .crm-tag {
+      display: inline-block;
       background: var(--dourado);
       color: #fff;
-      border-radius: var(--radius-sm);
-      padding: 10px 18px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.5px;
-      box-shadow: 0 8px 24px rgba(196,163,90,0.4);
+      padding: 5px 14px;
+      border-radius: 50px;
+      letter-spacing: .4px;
+      margin-top: 12px;
     }
 
-    .autoridade-info h2 {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      color: var(--texto-escuro);
-      margin-bottom: 8px;
-    }
+    .sobre-info h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 6px; }
+    .sobre-info .esp { font-size: .97rem; color: var(--dourado); font-weight: 500; margin-bottom: 22px; }
 
-    .autoridade-info .especialidade {
-      font-size: 1rem;
-      color: var(--dourado);
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
-
-    .autoridade-lista {
+    .formacao {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 36px;
+      display: flex; flex-direction: column; gap: 11px;
+      margin-bottom: 32px;
     }
 
-    .autoridade-lista li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.95rem;
-      color: var(--texto-medio);
+    .formacao li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: .9rem; color: var(--medio);
     }
 
-    .autoridade-lista li::before {
-      content: '✦';
-      color: var(--dourado);
-      font-size: 10px;
-      margin-top: 5px;
-      flex-shrink: 0;
-    }
+    .formacao li::before { content: '✦'; color: var(--dourado); font-size: 9px; margin-top: 5px; flex-shrink: 0; }
 
-    /* ── FAQ ──────────────────────────────────────────── */
+    /* FAQ */
     .faq { background: var(--branco); }
 
     .faq-lista {
-      max-width: 760px;
+      max-width: 740px;
       margin: 48px auto 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      display: flex; flex-direction: column; gap: 10px;
     }
 
     .faq-item {
       background: var(--bege);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--bege-medio);
+      border-radius: var(--r);
+      border: 1px solid var(--bege-md);
       overflow: hidden;
     }
 
-    .faq-pergunta {
+    .faq-q {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 24px;
+      padding: 18px 22px;
       cursor: pointer;
       user-select: none;
-      gap: 16px;
+      gap: 14px;
     }
 
-    .faq-pergunta h3 {
+    .faq-q h3 {
       font-family: 'Inter', sans-serif;
-      font-size: 0.97rem;
+      font-size: .94rem;
       font-weight: 600;
-      color: var(--texto-escuro);
+      color: var(--escuro);
     }
 
-    .faq-icon {
+    .faq-ico {
       width: 28px; height: 28px;
       border-radius: 50%;
-      background: rgba(196,163,90,0.15);
-      border: 1px solid rgba(196,163,90,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: rgba(196,163,90,.12);
+      border: 1px solid rgba(196,163,90,.28);
+      display: flex; align-items: center; justify-content: center;
       color: var(--dourado);
       font-size: 18px;
       flex-shrink: 0;
-      transition: transform 0.3s;
+      transition: transform .3s;
     }
 
-    .faq-item.aberto .faq-icon { transform: rotate(45deg); }
+    .faq-item.open .faq-ico { transform: rotate(45deg); }
 
-    .faq-resposta {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s;
-    }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-a-inner { padding: 0 22px 18px; font-size: .9rem; color: var(--medio); line-height: 1.7; }
+    .faq-item.open .faq-a { max-height: 300px; }
 
-    .faq-resposta-inner {
-      padding: 0 24px 20px;
-      font-size: 0.92rem;
-      color: var(--texto-medio);
-      line-height: 1.7;
-    }
-
-    .faq-item.aberto .faq-resposta { max-height: 300px; }
-
-    /* ── CTA FINAL ────────────────────────────────────── */
+    /* CTA FINAL */
     .cta-final {
-      background: linear-gradient(135deg, #2C2424 0%, #3D2F2F 40%, #4A3030 100%);
+      background: linear-gradient(140deg, #2A2020 0%, #3D2B2B 50%, #4A3232 100%);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -778,568 +665,536 @@
     .cta-final::before {
       content: '';
       position: absolute;
-      width: 700px; height: 700px;
+      width: 650px; height: 650px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(196,163,90,0.1) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(196,163,90,.09) 0%, transparent 65%);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
+      pointer-events: none;
     }
 
-    .cta-final .section-label { color: var(--dourado-claro); }
+    .cta-final .label { color: var(--dourado-cl); }
+    .cta-final .titulo { color: #fff; max-width: 680px; margin: 0 auto 18px; }
+    .cta-final .desc { font-size: 1rem; color: rgba(255,255,255,.6); max-width: 500px; margin: 0 auto 42px; line-height: 1.7; }
+    .cta-final .sub2 { margin-top: 18px; font-size: 12px; color: rgba(255,255,255,.35); }
 
-    .cta-final .section-title {
-      color: #fff;
-      max-width: 700px;
-      margin: 0 auto 20px;
-    }
-
-    .cta-final .desc {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.65);
-      max-width: 520px;
-      margin: 0 auto 44px;
-      line-height: 1.7;
-    }
-
-    .cta-final .subtexto {
-      margin-top: 20px;
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.4);
-    }
-
-    /* ── FOOTER ───────────────────────────────────────── */
+    /* FOOTER */
     footer {
-      background: #1E1818;
-      padding: 32px 24px;
+      background: #1A1212;
+      padding: 28px 24px;
       text-align: center;
-      color: rgba(255,255,255,0.35);
-      font-size: 12px;
+      color: rgba(255,255,255,.3);
+      font-size: 11.5px;
     }
 
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a { color: rgba(255,255,255,.45); text-decoration: none; }
 
-    /* ── WPP FIXO ─────────────────────────────────────── */
+    /* WPP FIXO */
     .wpp-fixo {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 60px; height: 60px;
-      background: linear-gradient(135deg, #25D366, #1DA851);
+      bottom: 22px; right: 22px;
+      width: 58px; height: 58px;
+      background: linear-gradient(135deg, #25D366, #1CB954);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(37,211,102,.42);
       z-index: 999;
       text-decoration: none;
-      animation: pulseWpp 2.5s infinite;
+      animation: pulse 2.4s infinite;
     }
 
-    .wpp-fixo svg { width: 30px; height: 30px; }
+    .wpp-fixo svg { width: 28px; height: 28px; }
 
-    @keyframes pulseWpp {
-      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
-      50% { box-shadow: 0 4px 32px rgba(37,211,102,0.65), 0 0 0 8px rgba(37,211,102,0.1); }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 4px 18px rgba(37,211,102,.42); }
+      50% { box-shadow: 0 4px 28px rgba(37,211,102,.6), 0 0 0 7px rgba(37,211,102,.1); }
     }
 
-    /* ── MOBILE ───────────────────────────────────────── */
+    /* REVEAL */
+    .rv { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .rv.on { opacity: 1; transform: translateY(0); }
+
+    /* MOBILE */
     @media (max-width: 768px) {
-      section { padding: 60px 20px; }
+      section { padding: 56px 18px; }
+      nav { padding: 0 18px; }
+      .nav-cta span { display: none; }
 
-      .hero {
-        padding: 90px 20px 80px;
-        min-height: auto;
-      }
+      .hero { padding: 90px 18px 64px; }
+      .hero-wrap { grid-template-columns: 1fr; gap: 28px; }
+      .hero-content { text-align: center; }
+      .hero-badge { margin: 0 auto 18px; }
+      .hero h2 { margin: 0 auto 16px; }
+      .hero-sub-crm { justify-content: center; }
+      .hero-chips { justify-content: center; }
 
-      .hero-container {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        text-align: center;
-      }
-
-      .hero-badge { margin: 0 auto 20px; }
-
-      .hero-subtexto { justify-content: center; }
-
-      .hero-foto-wrapper { order: 2; }
+      .hero-foto { order: 2; }
       .hero-content { order: 1; }
+      .hero-foto-frame img, .hero-foto-placeholder { height: 360px; }
+      .hero-foto-frame::before { inset: -10px -10px 0 10px; }
 
-      .hero-foto-frame::before { inset: -10px -10px 0 10px; border-radius: 28px; }
-      .hero-foto-frame img, .hero-foto-placeholder { height: 380px; border-radius: 28px; }
+      .float-card.left { bottom: 18px; left: 8px; }
+      .float-card.right { top: 10px; right: 8px; }
 
-      .hero-card-flutuante { bottom: 20px; left: 10px; }
-      .hero-card-flutuante2 { top: 10px; right: 10px; }
-
-      .passos { grid-template-columns: 1fr; gap: 36px; }
+      .passos { grid-template-columns: 1fr; gap: 28px; }
       .passos::before { display: none; }
 
-      .depoimentos-grid { grid-template-columns: 1fr; }
+      .dep-grid { grid-template-columns: 1fr; }
+      .sobre-inner { grid-template-columns: 1fr; }
+      .sobre-foto { display: none; }
 
-      .autoridade-inner { grid-template-columns: 1fr; }
-      .autoridade-foto { display: none; }
+      .cond-grid { grid-template-columns: 1fr 1fr; }
+      .dif-grid { grid-template-columns: 1fr 1fr; }
+      .numeros { gap: 28px; }
 
-      .numeros { gap: 32px; }
-
-      .cards-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .diferenciais-grid { grid-template-columns: 1fr 1fr; }
+      .cond-cta { flex-direction: column; text-align: center; }
     }
 
     @media (max-width: 420px) {
-      .cards-grid { grid-template-columns: 1fr; }
-      .diferenciais-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.75rem; }
-    }
-
-    /* ── ANIMAÇÕES SCROLL ─────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+      .cond-grid, .dif-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ─── HERO ─────────────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-container">
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    Dra. Polyana Flores
+    <span>Ginecologista &amp; Obstetra · Florianópolis</span>
+  </div>
+  <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20agendar%20uma%20consulta" class="nav-cta" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>Agendar Consulta</span>
+  </a>
+</nav>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-wrap">
     <div class="hero-content">
-      <div class="hero-badge">Obstetra Humanizada</div>
+      <div class="hero-badge">✦ Ginecologista &amp; Obstetra</div>
       <h1>Obstetra em <em>Florianópolis</em></h1>
       <h2>Está buscando uma médica obstetra?</h2>
+      <p class="hero-sub-crm">Atendimento humanizado para todas as fases da vida da mulher · CRM-SC</p>
       <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20agendar%20uma%20consulta" class="btn-wpp" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Agendar Atendimento Agora
+        Agendar Consulta
       </a>
-      <div class="hero-subtexto">
-        <span>Atendimento humanizado</span>
-        <span>Acompanhamento individual</span>
-        <span>Suporte durante toda a gestação</span>
+      <div class="hero-chips">
+        <span class="chip">Pré-natal humanizado</span>
+        <span class="chip">Ginecologia geral</span>
+        <span class="chip">Particular</span>
+        <span class="chip">Florianópolis</span>
       </div>
     </div>
 
-    <div class="hero-foto-wrapper">
+    <div class="hero-foto">
       <div class="hero-foto-frame">
-        <!-- Substitua 'foto-dra-polyana.jpg' pelo nome real da imagem salva na mesma pasta -->
-        <img src="foto-dra-polyana.jpg" alt="Dra. Polyana Flores — Obstetra Humanizada"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="hero-foto-placeholder" style="display:none;">
-          <div class="initials">PF</div>
+        <img src="foto-dra-polyana.jpg" alt="Dra. Polyana Flores — Ginecologista e Obstetra em Florianópolis"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="hero-foto-placeholder" style="display:none">
+          <div class="ini">PF</div>
           <span>Dra. Polyana Flores</span>
-          <small style="opacity:0.6">Salve sua foto como<br><strong>foto-dra-polyana.jpg</strong></small>
+          <small style="opacity:.6;text-align:center">Salve a foto como<br><strong>foto-dra-polyana.jpg</strong></small>
         </div>
-        <div class="hero-card-flutuante">
-          <span style="font-size:1.5rem">🤰</span>
-          <div class="texto">
-            <strong>Parto Humanizado</strong>
-            Presente em cada etapa
-          </div>
+        <div class="float-card left">
+          <span style="font-size:1.4rem">⭐</span>
+          <div class="ft"><strong>5.0 no Google</strong>pacientes satisfeitas</div>
         </div>
-        <div class="hero-card-flutuante2">
-          <div class="numero">500+</div>
-          <div class="label">gestantes<br>acompanhadas</div>
+        <div class="float-card right">
+          <div class="num">500+</div>
+          <div class="lbl">consultas<br>realizadas</div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ─── IDENTIFICAÇÃO ─────────────────────────────────── -->
-<section class="identificacao">
+<!-- CONDIÇÕES -->
+<section class="condicoes">
   <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Para você que está</div>
-      <h2 class="section-title">Você está vivendo alguma dessas fases?</h2>
-      <p class="section-sub">Encontre o apoio certo para cada momento da sua gestação e maternidade.</p>
+    <div class="tc rv">
+      <div class="label">Estou aqui para te ajudar</div>
+      <h2 class="titulo">O que você pode tratar comigo</h2>
+      <p class="sub">Seja para uma queixa específica, prevenção ou acompanhamento contínuo — ofereço cuidado integral para cada fase da sua vida.</p>
     </div>
-    <div class="cards-grid reveal">
-      <div class="card-id">
-        <span class="emoji">🌸</span>
-        <div class="card-title">Primeira gestação</div>
+    <div class="cond-grid rv">
+      <div class="cond-card">
+        <div class="cond-icon">🌸</div>
+        <div class="cond-titulo">Pré-natal Humanizado</div>
+        <div class="cond-desc">Acompanhamento completo e próximo da gestação, do início ao nascimento.</div>
       </div>
-      <div class="card-id">
-        <span class="emoji">🩺</span>
-        <div class="card-title">Pré-natal completo</div>
+      <div class="cond-card">
+        <div class="cond-icon">💛</div>
+        <div class="cond-titulo">Parto Humanizado</div>
+        <div class="cond-desc">Presença e suporte durante o parto, respeitando seus desejos e autonomia.</div>
       </div>
-      <div class="card-id">
-        <span class="emoji">💛</span>
-        <div class="card-title">Parto humanizado</div>
+      <div class="cond-card">
+        <div class="cond-icon">🩺</div>
+        <div class="cond-titulo">Cólicas Menstruais Intensas</div>
+        <div class="cond-desc">Investigamos a fundo as causas para aliviar a dor e melhorar sua qualidade de vida.</div>
       </div>
-      <div class="card-id">
-        <span class="emoji">👶</span>
-        <div class="card-title">Acompanhamento do bebê</div>
+      <div class="cond-card">
+        <div class="cond-icon">🔴</div>
+        <div class="cond-titulo">Sangramentos Anormais</div>
+        <div class="cond-desc">Buscamos a origem do sangramento e tratamos com cuidado e eficiência.</div>
       </div>
-      <div class="card-id">
-        <span class="emoji">💭</span>
-        <div class="card-title">Dúvidas e inseguranças na gravidez</div>
+      <div class="cond-card">
+        <div class="cond-icon">⚕️</div>
+        <div class="cond-titulo">Endometriose</div>
+        <div class="cond-desc">Acompanhamento especializado com foco no alívio da dor e qualidade de vida.</div>
       </div>
-      <div class="card-id">
-        <span class="emoji">⚕️</span>
-        <div class="card-title">Gestação de alto risco</div>
+      <div class="cond-card">
+        <div class="cond-icon">🔬</div>
+        <div class="cond-titulo">Disfunções Hormonais</div>
+        <div class="cond-desc">Identificamos desequilíbrios que afetam seu corpo, humor e bem-estar.</div>
       </div>
-      <div class="card-id">
-        <span class="emoji">📋</span>
-        <div class="card-title">Planejamento do parto</div>
+      <div class="cond-card">
+        <div class="cond-icon">🌿</div>
+        <div class="cond-titulo">Menopausa</div>
+        <div class="cond-desc">Acompanhamento durante a transição hormonal com suporte integral e segurança.</div>
       </div>
-      <div class="card-id">
-        <span class="emoji">🔬</span>
-        <div class="card-title">Exames e acompanhamento fetal</div>
+      <div class="cond-card">
+        <div class="cond-icon">💊</div>
+        <div class="cond-titulo">Métodos Contraceptivos</div>
+        <div class="cond-desc">Orientação personalizada para o método ideal, respeitando seu estilo de vida.</div>
       </div>
-      <div class="card-id">
-        <span class="emoji">🌿</span>
-        <div class="card-title">Pós-parto e recuperação</div>
+      <div class="cond-card">
+        <div class="cond-icon">🤰</div>
+        <div class="cond-titulo">Gestação de Alto Risco</div>
+        <div class="cond-desc">Cuidado especializado com atenção redobrada para mãe e bebê ficarem bem.</div>
       </div>
-      <div class="card-id">
-        <span class="emoji">🤱</span>
-        <div class="card-title">Orientação para mães de primeira viagem</div>
+      <div class="cond-card">
+        <div class="cond-icon">💞</div>
+        <div class="cond-titulo">Dor Pélvica Crônica</div>
+        <div class="cond-desc">Avaliação cuidadosa para identificar a causa e tratar com efetividade.</div>
       </div>
+      <div class="cond-card">
+        <div class="cond-icon">🌱</div>
+        <div class="cond-titulo">Pós-Parto e Recuperação</div>
+        <div class="cond-desc">Suporte e acompanhamento no puerpério, cuidando da mãe em todos os aspectos.</div>
+      </div>
+      <div class="cond-card">
+        <div class="cond-icon">🤱</div>
+        <div class="cond-titulo">Ginecologia Preventiva</div>
+        <div class="cond-desc">Rastreamento, exames preventivos e cuidado contínuo da saúde feminina.</div>
+      </div>
+    </div>
+    <div class="cond-cta rv">
+      <p><strong>Se você se identificou com alguma dessas situações,</strong> a minha consulta pode ser exatamente o que você precisa. Agende agora e comece o cuidado que você merece.</p>
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20agendar%20uma%20consulta" class="btn-wpp" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar Consulta
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ─── CONEXÃO EMOCIONAL ─────────────────────────────── -->
+<!-- CONEXÃO EMOCIONAL -->
 <section class="conexao">
-  <div class="container reveal">
-    <div class="section-label">Sobre a gestação</div>
-    <h2 class="section-title">Cada gestação é única — e merece cuidado único.</h2>
-    <p class="conexao-texto">
-      "A gravidez é um momento transformador. Ter uma obstetra presente, acessível e preparada faz toda diferença para viver essa fase com mais tranquilidade, segurança e confiança."
-    </p>
-    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20falar%20com%20voc%C3%AA" class="btn-secundario" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div class="container rv">
+    <div class="label">Cuidado que transforma</div>
+    <h2 class="titulo">Você merece se sentir plena em todas as fases da sua vida.</h2>
+    <p class="conexao-texto">"Aqui você será tratada com carinho e atenção genuína. Cada consulta é um momento dedicado exclusivamente a você, onde nada passa despercebido — porque quando uma mulher é bem cuidada, tudo ao redor dela floresce."</p>
+    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20falar%20com%20voc%C3%AA" class="btn-outline" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Falar com a Dra. Polyana
     </a>
   </div>
 </section>
 
-<!-- ─── COMO FUNCIONA ─────────────────────────────────── -->
-<section class="como-funciona">
+<!-- COMO FUNCIONA -->
+<section class="como">
   <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Simples assim</div>
-      <h2 class="section-title">Como funciona o acompanhamento</h2>
-      <p class="section-sub">Cuidar de você é nossa prioridade — e começa com um simples contato.</p>
+    <div class="tc rv">
+      <div class="label">Jornada da paciente</div>
+      <h2 class="titulo">Como funciona o atendimento</h2>
+      <p class="sub">Cada etapa pensada para que você se sinta acolhida, ouvida e cuidada do início ao fim.</p>
     </div>
-    <div class="passos reveal">
+    <div class="passos rv">
       <div class="passo">
-        <div class="passo-numero">1</div>
-        <h3>Agende sua consulta pelo WhatsApp</h3>
-        <p>Entre em contato de forma simples e rápida. Nossa equipe responde com agilidade e carinho.</p>
+        <div class="passo-num">1</div>
+        <h3>Agendamento pelo WhatsApp</h3>
+        <p>Simples e rápido. Nossa equipe responde com carinho e confirma sua consulta.</p>
       </div>
       <div class="passo">
-        <div class="passo-numero">2</div>
-        <h3>Receba acompanhamento individualizado</h3>
-        <p>Cada gestação é única. Dra. Polyana estará presente em cada etapa, com escuta e atenção personalizadas.</p>
+        <div class="passo-num">2</div>
+        <h3>Consulta com escuta ativa</h3>
+        <p>Você é ouvida com atenção total. Sem pressa, sem protocolos frios — só cuidado real.</p>
       </div>
       <div class="passo">
-        <div class="passo-numero">3</div>
-        <h3>Viva a maternidade com segurança</h3>
-        <p>Com suporte completo e humanizado, você terá mais tranquilidade, confiança e paz durante toda a gestação.</p>
+        <div class="passo-num">3</div>
+        <h3>Avaliação e plano personalizado</h3>
+        <p>Exames direcionados e um plano de cuidado feito exclusivamente para o seu caso.</p>
+      </div>
+      <div class="passo">
+        <div class="passo-num">4</div>
+        <h3>Acompanhamento contínuo</h3>
+        <p>Uma médica que conhece seu histórico e estará presente em cada etapa da sua vida.</p>
       </div>
     </div>
-    <div style="text-align:center; margin-top:52px;" class="reveal">
+    <div style="text-align:center;margin-top:52px" class="rv">
       <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20agendar%20uma%20consulta" class="btn-wpp" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Quero Agendar Minha Consulta
       </a>
     </div>
   </div>
 </section>
 
-<!-- ─── DIFERENCIAIS ───────────────────────────────────── -->
+<!-- DIFERENCIAIS -->
 <section class="diferenciais">
   <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Por que a Dra. Polyana</div>
-      <h2 class="section-title">Diferenciais que fazem toda a diferença</h2>
-      <p class="section-sub">Uma medicina que coloca você no centro — porque é assim que o cuidado deve ser.</p>
+    <div class="tc rv">
+      <div class="label">Por que a Dra. Polyana</div>
+      <h2 class="titulo">O que torna o atendimento diferente</h2>
+      <p class="sub">Uma medicina que coloca você no centro — porque é assim que o cuidado deve ser.</p>
     </div>
-    <div class="diferenciais-grid reveal">
-      <div class="diferencial-card">
-        <div class="diferencial-icon">🤝</div>
+    <div class="dif-grid rv">
+      <div class="dif-card">
+        <div class="dif-icon">🤝</div>
         <h3>Atendimento Humanizado</h3>
-        <p>Cada consulta é um espaço de acolhimento real. Você nunca se sentirá apenas mais uma paciente.</p>
+        <p>Você nunca se sentirá apenas mais uma paciente. Cada consulta é um espaço real de acolhimento.</p>
       </div>
-      <div class="diferencial-card">
-        <div class="diferencial-icon">👂</div>
-        <h3>Escuta Ativa e Acolhimento</h3>
-        <p>Suas dúvidas, medos e sentimentos são levados a sério — porque a saúde emocional também importa.</p>
+      <div class="dif-card">
+        <div class="dif-icon">👂</div>
+        <h3>Escuta Ativa e Sem Pressa</h3>
+        <p>Tempo dedicado para entender sua história, seus sintomas e o que realmente importa para você.</p>
       </div>
-      <div class="diferencial-card">
-        <div class="diferencial-icon">📱</div>
+      <div class="dif-card">
+        <div class="dif-icon">🔬</div>
+        <h3>Abordagem Integral</h3>
+        <p>Corpo, mente e emoções — olhamos para você como um todo, não apenas para os sintomas.</p>
+      </div>
+      <div class="dif-card">
+        <div class="dif-icon">📱</div>
         <h3>Disponibilidade e Proximidade</h3>
-        <p>Acompanhamento próximo, com suporte além do consultório durante toda a sua gestação.</p>
+        <p>Acompanhamento próximo mesmo entre consultas, com suporte quando você precisar.</p>
       </div>
-      <div class="diferencial-card">
-        <div class="diferencial-icon">💞</div>
-        <h3>Foco na Mãe e no Bebê</h3>
-        <p>Decisões tomadas sempre priorizando o bem-estar de vocês dois, com segurança e evidência científica.</p>
+      <div class="dif-card">
+        <div class="dif-icon">💞</div>
+        <h3>Foco na Saúde da Mulher</h3>
+        <p>Especialidade dedicada exclusivamente ao cuidado feminino em todas as fases da vida.</p>
       </div>
-      <div class="diferencial-card">
-        <div class="diferencial-icon">🩺</div>
-        <h3>Pré-natal Completo</h3>
-        <p>Acompanhamento de cada etapa, exames, orientações nutricionais e preparação para o parto.</p>
+      <div class="dif-card">
+        <div class="dif-icon">✨</div>
+        <h3>Plano Personalizado</h3>
+        <p>Nenhuma paciente é igual à outra. Seu tratamento é criado especialmente para você.</p>
       </div>
-      <div class="diferencial-card">
-        <div class="diferencial-icon">⭐</div>
-        <h3>Experiência em Obstetrícia</h3>
-        <p>Anos de dedicação exclusiva à saúde da mulher gestante, com centenas de partos acompanhados.</p>
+      <div class="dif-card">
+        <div class="dif-icon">🌸</div>
+        <h3>Ambiente Acolhedor</h3>
+        <p>Consultório pensado para que você se sinta confortável, segura e bem-vinda desde a chegada.</p>
       </div>
-      <div class="diferencial-card">
-        <div class="diferencial-icon">🌸</div>
-        <h3>Ambiente Confortável e Seguro</h3>
-        <p>Consultório pensado para que você se sinta à vontade, acolhida e tranquila desde a chegada.</p>
-      </div>
-      <div class="diferencial-card">
-        <div class="diferencial-icon">✨</div>
-        <h3>Atendimento Personalizado</h3>
-        <p>Não existe uma gestação igual à outra. Seu plano de cuidados é criado especialmente para você.</p>
+      <div class="dif-card">
+        <div class="dif-icon">⭐</div>
+        <h3>Experiência Comprovada</h3>
+        <p>Anos de dedicação à ginecologia e obstetrícia, com centenas de pacientes acompanhadas.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── PROVA SOCIAL ───────────────────────────────────── -->
-<section class="prova-social">
+<!-- DEPOIMENTOS -->
+<section class="depoimentos">
   <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Histórias reais</div>
-      <h2 class="section-title">O que dizem as mamães que já passaram por aqui</h2>
+    <div class="tc rv">
+      <div class="label">O que as pacientes dizem</div>
+      <h2 class="titulo">Histórias reais de quem já foi cuidada</h2>
     </div>
-
-    <div class="numeros reveal">
-      <div class="numero-item">
-        <div class="num">500+</div>
-        <div class="num-label">gestantes acompanhadas</div>
-      </div>
-      <div class="numero-item">
-        <div class="num">100%</div>
-        <div class="num-label">de dedicação e cuidado</div>
-      </div>
-      <div class="numero-item">
-        <div class="num">5 ★</div>
-        <div class="num-label">avaliação no Google</div>
-      </div>
+    <div class="numeros rv">
+      <div class="num-item"><div class="n">500+</div><div class="nl">pacientes atendidas</div></div>
+      <div class="num-item"><div class="n">100%</div><div class="nl">dedicação e cuidado</div></div>
+      <div class="num-item"><div class="n">5 ★</div><div class="nl">avaliação no Google</div></div>
     </div>
-
-    <div class="depoimentos-grid reveal">
-      <div class="depoimento">
-        <div class="stars">★★★★★</div>
-        <p class="texto">"Entrei no consultório com muito medo do parto e saí de lá completamente tranquila. A Dra. Polyana explicou tudo com paciência e esteve presente em cada momento. Meu parto foi muito mais leve do que eu imaginava. Me senti segura em todos os momentos."</p>
-        <div class="autora">
-          <div class="avatar">🌸</div>
-          <div>
-            <div class="nome">Amanda R.</div>
-            <div class="desc">Mãe do pequeno Pedro</div>
-          </div>
+    <div class="dep-grid rv">
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"Profissional incrível! Me senti acolhida desde a primeira consulta. Ela ouviu tudo o que eu tinha a dizer com paciência e atenção. Finalmente me sinto cuidada de verdade. Recomendo de olhos fechados!"</p>
+        <div class="dep-autora">
+          <div class="dep-avatar">🌸</div>
+          <div><div class="dep-nome">Camila R.</div><div class="dep-desc">Paciente de ginecologia</div></div>
         </div>
       </div>
-
-      <div class="depoimento">
-        <div class="stars">★★★★★</div>
-        <p class="texto">"Uma médica extremamente humana e atenciosa. Durante toda a minha gestação eu me senti acompanhada de verdade — não apenas nas consultas, mas também fora delas. Ela sempre respondeu minhas dúvidas com carinho e atenção. Sou muito grata."</p>
-        <div class="autora">
-          <div class="avatar">💛</div>
-          <div>
-            <div class="nome">Fernanda M.</div>
-            <div class="desc">Mamãe de primeira viagem</div>
-          </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"A Dra. Polyana acompanhou toda a minha gestação com um cuidado que eu jamais esperava. Esteve presente no parto e fez tudo ser muito mais tranquilo. Sou eternamente grata por ter escolhido ela."</p>
+        <div class="dep-autora">
+          <div class="dep-avatar">🤰</div>
+          <div><div class="dep-nome">Fernanda M.</div><div class="dep-desc">Gestante acompanhada</div></div>
         </div>
       </div>
-
-      <div class="depoimento">
-        <div class="stars">★★★★★</div>
-        <p class="texto">"Eu era muito ansiosa e insegura, especialmente por ser minha primeira gestação. A Dra. Polyana transformou minha experiência da maternidade. Com ela aprendi a confiar no meu corpo e no processo. Hoje sou mãe de uma menina linda e saudável!"</p>
-        <div class="autora">
-          <div class="avatar">🤰</div>
-          <div>
-            <div class="nome">Camila S.</div>
-            <div class="desc">Mãe da pequena Sofia</div>
-          </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"Eu sofria com cólicas intensas há anos sem diagnóstico. Em uma consulta ela identificou o problema, montou um plano e hoje minha qualidade de vida é completamente diferente. Médica extremamente humana e competente."</p>
+        <div class="dep-autora">
+          <div class="dep-avatar">💛</div>
+          <div><div class="dep-nome">Juliana S.</div><div class="dep-desc">Tratamento de endometriose</div></div>
         </div>
       </div>
     </div>
-
-    <div style="text-align:center; margin-top:40px;" class="reveal">
+    <div style="text-align:center" class="rv">
       <div class="google-badge">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        <span class="g-stars">★★★★★</span>
-        <span class="g-text"><strong>5.0</strong> · Avaliação no Google</span>
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span class="gs">★★★★★</span>
+        <span class="gt"><strong>5.0</strong> · Avaliação no Google</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── AUTORIDADE ─────────────────────────────────────── -->
-<section class="autoridade">
+<!-- SOBRE / AUTORIDADE -->
+<section class="sobre">
   <div class="container">
-    <div class="autoridade-inner">
-      <div class="autoridade-foto reveal">
+    <div class="sobre-inner">
+      <div class="sobre-foto rv">
         <img src="foto-dra-polyana.jpg" alt="Dra. Polyana Flores"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="autoridade-foto-placeholder" style="display:none;">
-          <div style="font-size:3rem">🩺</div>
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="sobre-foto-ph" style="display:none">
+          <span style="font-size:2.5rem">🩺</span>
           <span>Dra. Polyana Flores</span>
         </div>
-        <div class="crm-badge">CRM · Especialista em Obstetrícia</div>
       </div>
-      <div class="autoridade-info reveal">
-        <div class="section-label">Sobre a médica</div>
+      <div class="sobre-info rv">
+        <div class="label">Conheça a médica</div>
         <h2>Dra. Polyana Flores</h2>
-        <div class="especialidade">Médica Obstetra · Gestação Humanizada</div>
-        <ul class="autoridade-lista">
-          <li>Médica Graduada em Medicina com sólida formação clínica</li>
-          <li>Especialização em Obstetrícia e Medicina Fetal</li>
-          <li>Anos de experiência dedicados exclusivamente à saúde da mulher gestante</li>
-          <li>Mais de 500 gestantes acompanhadas com segurança e cuidado</li>
-          <li>Referência em obstetrícia humanizada na região</li>
-          <li>Abordagem centrada na mãe e no bebê, com escuta e empatia</li>
-          <li>Atendimento em consultório confortável, acolhedor e seguro</li>
+        <div class="esp">Ginecologista &amp; Obstetra · Florianópolis</div>
+        <ul class="formacao">
+          <li>Médica especialista em Ginecologia e Obstetrícia</li>
+          <li>Residência em Ginecologia e Obstetrícia</li>
+          <li>Especialização em Obstetrícia Humanizada</li>
+          <li>Anos de experiência dedicados exclusivamente à saúde feminina</li>
+          <li>Mais de 500 pacientes acompanhadas com segurança e cuidado</li>
+          <li>Atendimento exclusivamente particular, com tempo real dedicado a você</li>
+          <li>Florianópolis — SC · CRM-SC</li>
         </ul>
-        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20conhecer%20melhor%20seu%20atendimento" class="btn-wpp" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quero Conhecer o Atendimento
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20agendar%20uma%20consulta" class="btn-wpp" target="_blank" rel="noopener">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar Minha Consulta
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── FAQ ────────────────────────────────────────────── -->
+<!-- FAQ -->
 <section class="faq">
   <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Tire suas dúvidas</div>
-      <h2 class="section-title">Perguntas Frequentes</h2>
-      <p class="section-sub">Respostas simples e diretas para as dúvidas mais comuns das gestantes.</p>
+    <div class="tc rv">
+      <div class="label">Dúvidas frequentes</div>
+      <h2 class="titulo">Respostas para as suas principais perguntas</h2>
+      <p class="sub">Tudo o que você precisa saber antes de agendar sua consulta.</p>
     </div>
-    <div class="faq-lista reveal">
+    <div class="faq-lista rv">
 
       <div class="faq-item">
-        <div class="faq-pergunta" onclick="toggleFaq(this)">
+        <div class="faq-q" onclick="tog(this)">
+          <h3>Como é a consulta ginecológica?</h3>
+          <div class="faq-ico">+</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">A consulta é um espaço seguro e acolhedor. Você será ouvida com atenção e sem julgamentos. Avaliamos sua saúde de forma completa, respeitando seu ritmo e suas necessidades a cada etapa.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="tog(this)">
           <h3>Quando devo iniciar o pré-natal?</h3>
-          <div class="faq-icon">+</div>
+          <div class="faq-ico">+</div>
         </div>
-        <div class="faq-resposta">
-          <div class="faq-resposta-inner">O ideal é que o pré-natal comece assim que você descobrir a gravidez, de preferência ainda no primeiro trimestre (até a 12ª semana). Quanto antes, melhor — assim garantimos um acompanhamento completo desde o início.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">O ideal é iniciar assim que descobrir a gravidez, de preferência até a 12ª semana. Quanto antes, melhor — assim garantimos acompanhamento completo desde o início da gestação.</div></div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-pergunta" onclick="toggleFaq(this)">
-          <h3>Quantas consultas são necessárias durante a gravidez?</h3>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-resposta">
-          <div class="faq-resposta-inner">O Ministério da Saúde recomenda no mínimo 6 consultas durante a gestação. No nosso acompanhamento humanizado, adaptamos a frequência às suas necessidades, garantindo que você sempre se sinta amparada e segura.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-pergunta" onclick="toggleFaq(this)">
+        <div class="faq-q" onclick="tog(this)">
           <h3>A Dra. Polyana acompanha o parto?</h3>
-          <div class="faq-icon">+</div>
+          <div class="faq-ico">+</div>
         </div>
-        <div class="faq-resposta">
-          <div class="faq-resposta-inner">Sim! O acompanhamento da Dra. Polyana inclui a presença e suporte durante o parto. A ideia é que você chegue a esse momento com confiança e com uma médica que já conhece toda a sua trajetória.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">Sim! O acompanhamento inclui presença e suporte no momento do parto. Você chegará a esse momento com uma médica que já conhece toda a sua história e que estará ao seu lado.</div></div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-pergunta" onclick="toggleFaq(this)">
-          <h3>A Dra. atende gestação de alto risco?</h3>
-          <div class="faq-icon">+</div>
+        <div class="faq-q" onclick="tog(this)">
+          <h3>Atende gestação de alto risco?</h3>
+          <div class="faq-ico">+</div>
         </div>
-        <div class="faq-resposta">
-          <div class="faq-resposta-inner">Sim. A Dra. Polyana possui formação e experiência para acompanhar gestações de alto risco com atenção redobrada, exames especializados e todo o suporte necessário para mãe e bebê ficarem bem.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">Sim. A Dra. Polyana possui formação e experiência para acompanhar gestações de alto risco com atenção especializada, exames direcionados e todo suporte necessário.</div></div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-pergunta" onclick="toggleFaq(this)">
-          <h3>Como funciona o acompanhamento humanizado?</h3>
-          <div class="faq-icon">+</div>
+        <div class="faq-q" onclick="tog(this)">
+          <h3>Quanto tempo dura a consulta?</h3>
+          <div class="faq-ico">+</div>
         </div>
-        <div class="faq-resposta">
-          <div class="faq-resposta-inner">O acompanhamento humanizado significa que você é ouvida, respeitada e participante ativa de todas as decisões sobre sua gestação. Sem pressa, sem protocolos frios — cada consulta é personalizada para o seu momento.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">As consultas têm duração adequada para cada necessidade. A primeira consulta costuma ser mais longa para que possamos entender toda a sua história com atenção e cuidado.</div></div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-pergunta" onclick="toggleFaq(this)">
-          <h3>O atendimento pode ser particular?</h3>
-          <div class="faq-icon">+</div>
+        <div class="faq-q" onclick="tog(this)">
+          <h3>Atende por convênio ou apenas particular?</h3>
+          <div class="faq-ico">+</div>
         </div>
-        <div class="faq-resposta">
-          <div class="faq-resposta-inner">Sim, atendemos de forma particular. Entre em contato pelo WhatsApp para saber mais sobre valores, pacotes de acompanhamento e formas de pagamento disponíveis.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">O atendimento é particular, o que permite dedicar o tempo necessário a cada paciente sem limitações de convênio. Entre em contato para saber sobre valores e formas de pagamento.</div></div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-pergunta" onclick="toggleFaq(this)">
-          <h3>Atende pacientes de outras cidades?</h3>
-          <div class="faq-icon">+</div>
+        <div class="faq-q" onclick="tog(this)">
+          <h3>Como agendar a primeira consulta?</h3>
+          <div class="faq-ico">+</div>
         </div>
-        <div class="faq-resposta">
-          <div class="faq-resposta-inner">Sim! Recebemos pacientes de várias regiões. Consultas de retorno e acompanhamento podem ser realizados de forma presencial conforme a necessidade. Entre em contato para sabermos mais sobre a sua situação.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">É simples! Clique no botão "Agendar Consulta" ou envie uma mensagem pelo WhatsApp. Nossa equipe responde rapidamente e confirma o melhor horário para você.</div></div>
       </div>
 
+    </div>
+
+    <div style="text-align:center;margin-top:40px" class="rv">
+      <p style="font-size:.95rem;color:var(--medio);margin-bottom:20px">Ainda tem dúvidas? Vamos conversar!</p>
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20tenho%20uma%20d%C3%BAvida" class="btn-wpp" target="_blank" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar no WhatsApp
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ─── CTA FINAL ──────────────────────────────────────── -->
+<!-- CTA FINAL -->
 <section class="cta-final">
-  <div class="container reveal" style="position:relative;z-index:1;">
-    <div class="section-label">Comece agora</div>
-    <h2 class="section-title">Seu momento mais importante merece cuidado, atenção e segurança.</h2>
-    <p class="desc">Agende seu atendimento e tenha um acompanhamento obstétrico acolhedor e humanizado. Cada etapa da sua gestação, cuidada de perto.</p>
+  <div class="container rv" style="position:relative;z-index:1">
+    <div class="label">Dê o primeiro passo</div>
+    <h2 class="titulo">Você merece cuidado de verdade — em todas as fases da vida.</h2>
+    <p class="desc">Agende sua consulta e tenha ao seu lado uma ginecologista e obstetra que realmente se importa com você.</p>
     <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20agendar%20minha%20consulta" class="btn-wpp" target="_blank" rel="noopener">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Agendar pelo WhatsApp
     </a>
-    <p class="subtexto">Atendimento humanizado · Resposta rápida · Sem burocracia</p>
+    <p class="sub2">Resposta rápida · Atendimento humanizado · Florianópolis</p>
   </div>
 </section>
 
-<!-- ─── FOOTER ─────────────────────────────────────────── -->
+<!-- FOOTER -->
 <footer>
-  <p style="margin-bottom:8px; font-size:11px; opacity:0.5;">© 2026 Dra. Polyana Flores — Médica Obstetra · Todos os direitos reservados</p>
+  <p style="margin-bottom:6px;opacity:.4;font-size:10.5px">© 2026 Dra. Polyana Flores — Ginecologista &amp; Obstetra · Florianópolis · Todos os direitos reservados</p>
   <p>Criado por <a href="https://wa.me/5544991722172">Andrey Miranda</a> · (44) 99172-2172</p>
 </footer>
 
-<!-- ─── BOTÃO WPP FIXO ─────────────────────────────────── -->
+<!-- WPP FIXO -->
 <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Polyana%2C%20gostaria%20de%20agendar%20uma%20consulta" class="wpp-fixo" target="_blank" rel="noopener" title="Agendar pelo WhatsApp">
   <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-  function toggleFaq(btn) {
+  function tog(btn) {
     const item = btn.parentElement;
-    const isAberto = item.classList.contains('aberto');
-    document.querySelectorAll('.faq-item.aberto').forEach(el => el.classList.remove('aberto'));
-    if (!isAberto) item.classList.add('aberto');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(e => e.classList.remove('open'));
+    if (!open) item.classList.add('open');
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
 </script>
 
 </body>
